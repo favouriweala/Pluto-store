@@ -1,11 +1,14 @@
 import { useState } from 'react';
+import { useProducts } from '../context';
 import '../styles/Shop.css';
 
 export default function Shop() {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const { products, getProductsByCategory } = useProducts();
 
-  // Placeholder for products - will be replaced with real data
-  const products = [];
+  const displayProducts = selectedCategory === 'all' 
+    ? products 
+    : getProductsByCategory(selectedCategory);
 
   return (
     <div className="shop">
@@ -45,13 +48,24 @@ export default function Shop() {
         <main className="shop-main">
           <h2>Our Collection</h2>
           
-          {products.length === 0 ? (
+        {displayProducts.length === 0 ? (
             <div className="empty-state">
               <p>Products coming soon...</p>
             </div>
           ) : (
             <div className="products-grid">
-              {/* Product cards will be mapped here */}
+              {displayProducts.map((product) => (
+                <div key={product.id} className="product-card">
+                  <div className="product-image">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <div className="product-info">
+                    <div className="product-category">{product.category}</div>
+                    <h3 className="product-name">{product.name}</h3>
+                    <div className="product-price">₦{product.price.toFixed(2)}</div>
+                  </div>
+                </div>
+              ))}
             </div>
           )}
         </main>

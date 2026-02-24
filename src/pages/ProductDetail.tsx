@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import '../styles/ProductDetail.css';
 
 export default function ProductDetail() {
-  const { id } = useParams();
+  const { id: _productId } = useParams();
 
   return (
     <div className="product-detail">
