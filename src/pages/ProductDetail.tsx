@@ -6,7 +6,7 @@ import '../styles/ProductDetail.css';
 export default function ProductDetail() {
   const { id: productId } = useParams();
   const navigate = useNavigate();
-  const { getProductById } = useProducts();
+  const { getProductById, getDiscountPercentage } = useProducts();
   const { addItem } = useCart();
   const [selectedSize, setSelectedSize] = useState('');
   const [quantity, setQuantity] = useState(1);
@@ -52,6 +52,9 @@ export default function ProductDetail() {
         {/* Product Image */}
         <div className="product-image">
           <img src={product.image} alt={product.name} />
+          {getDiscountPercentage(product) > 0 && (
+            <div className="discount-badge-large">Save {getDiscountPercentage(product)}%</div>
+          )}
         </div>
 
         {/* Product Info */}
@@ -65,7 +68,10 @@ export default function ProductDetail() {
           <div className="product-price">
             <span className="price">₦{product.price.toFixed(2)}</span>
             {product.originalPrice && (
-              <span className="original-price">₦{product.originalPrice.toFixed(2)}</span>
+              <>
+                <span className="original-price">₦{product.originalPrice.toFixed(2)}</span>
+                <span className="savings-text">You save ₦{(product.originalPrice - product.price).toFixed(2)}</span>
+              </>
             )}
           </div>
 

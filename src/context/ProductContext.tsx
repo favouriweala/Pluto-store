@@ -22,6 +22,7 @@ interface ProductContextType {
   getProductById: (id: string) => Product | undefined;
   getProductsByCategory: (category: string) => Product[];
   getAllProducts: () => Product[];
+  getDiscountPercentage: (product: Product) => number;
 }
 
 const ProductContext = createContext<ProductContextType | undefined>(undefined);
@@ -96,6 +97,11 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
     return products;
   };
 
+  const getDiscountPercentage = (product: Product) => {
+    if (!product.originalPrice) return 0;
+    return Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+  };
+
   return (
     <ProductContext.Provider
       value={{
@@ -106,6 +112,7 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
         getProductById,
         getProductsByCategory,
         getAllProducts,
+        getDiscountPercentage,
       }}
     >
       {children}

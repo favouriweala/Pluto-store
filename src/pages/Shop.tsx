@@ -5,7 +5,7 @@ import '../styles/Shop.css';
 
 export default function Shop() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const { products, getProductsByCategory } = useProducts();
+  const { products, getProductsByCategory, getDiscountPercentage } = useProducts();
 
   const displayProducts = selectedCategory === 'all' 
     ? products 
@@ -64,11 +64,19 @@ export default function Shop() {
                 >
                   <div className="product-image">
                     <img src={product.image} alt={product.name} />
+                    {getDiscountPercentage(product) > 0 && (
+                      <div className="discount-badge">Save {getDiscountPercentage(product)}%</div>
+                    )}
                   </div>
                   <div className="product-info">
                     <div className="product-category">{product.category}</div>
                     <h3 className="product-name">{product.name}</h3>
-                    <div className="product-price">₦{product.price.toFixed(2)}</div>
+                    <div className="product-price">
+                      <span className="current-price">₦{product.price.toFixed(2)}</span>
+                      {product.originalPrice && (
+                        <span className="original-price">₦{product.originalPrice.toFixed(2)}</span>
+                      )}
+                    </div>
                   </div>
                 </Link>
               ))}
