@@ -1,73 +1,133 @@
-# React + TypeScript + Vite
+🪐 Pluto Store — Premium E-Commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Pluto Clothing is a modern, premium fashion e-commerce website built to transition clothing business from WhatsApp-based orders to a fully automated online shopping experience.
 
-Currently, two official plugins are available:
+The goal of this project is to create a luxury, scalable digital store that allows customers to shop seamlessly
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✨ Project Vision
 
-## React Compiler
+Pluto Store is designed to:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Provide a premium and modern online shopping experience
 
-## Expanding the ESLint configuration
+Allow customers to shop easily for:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Men’s wear
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Women’s wear
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Kids’ wear
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Enable secure online payments (Card & Direct Bank Transfer)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Automate order processing and customer communication
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Include an admin dashboard for managing products and customers
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The design philosophy focuses on:
+
+Minimalism
+
+Clean layout
+
+Luxury aesthetic
+
+Fast and seamless user experience
+
+🚀 Key Features
+🛍 Customer Features
+
+Browse products by category (Men, Women, Kids)
+
+Clean and responsive product grid layout
+
+Detailed product pages
+
+Add to cart functionality
+
+Secure checkout system
+
+Payment via:
+
+Debit/Credit Card
+
+Direct Bank Transfer
+
+Order confirmation emails
+
+🔐 Admin Dashboard (Planned / In Progress)
+
+Secure admin login
+
+Add new products
+
+Edit existing listings
+
+Delete products
+
+View customer orders
+
+Manage order status
+
+Access customer email list
+
+📧 Automated Email System
+
+When a new product is added:
+
+Previous customers automatically receive an email notification announcing new arrivals.
+
+This ensures customer retention and consistent engagement without manual messaging.
+
+🏗 Tech Stack
+
+Frontend
+
+React (Vite setup)
+
+React Router
+
+Context API (for state management)
+
+CSS (Custom styling — white, black, grey theme)
+
+Backend (Planned)
+
+Node.js
+
+Express.js
+
+MongoDB
+
+Email service integration
+
+📂 Project Structure
+src/
+ ├── components/
+ ├── pages/
+ ├── context/
+ ├── data/
+ ├── assets/
+ ├── App.jsx
+ └── main.jsx
+
+The architecture is structured for scalability and future backend integration.
+
+📈 Future Improvements
+
+Full backend integration
+
+Admin analytics dashboard
+
+Inventory management system
+
+Payment gateway integration (live)
+
+Email marketing automation
+
+Deployment (Vercel / Render)
+
+👩🏽‍💻 Author
+
+Nkeiruka Iweala
+Software Engineer — Building solutions to real-world problems with code.
