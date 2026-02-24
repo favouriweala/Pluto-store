@@ -53,6 +53,7 @@
 }
 
 .cta-button {
+  display: inline-block;
   background-color: var(--primary);
   color: var(--white);
   border: 1px solid var(--primary);
@@ -65,6 +66,7 @@
   transition: all 0.4s ease;
   text-transform: uppercase;
   font-family: var(--font-body);
+  text-decoration: none;
 }
 
 .cta-button:hover {
@@ -181,6 +183,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 .category-card::before {

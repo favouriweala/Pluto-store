@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
         <div className="hero-content">
           <h1>Welcome to Pluto Store</h1>
           <p>Premium Fashion, Delivered</p>
-          <button className="cta-button">Start Shopping</button>
+          <Link to="/shop" className="cta-button">Start Shopping</Link>
         </div>
       </section>
 
@@ -32,15 +33,15 @@ export default function Home() {
       <section className="categories">
         <h2>Shop by Category</h2>
         <div className="categories-grid">
-          <div className="category-card">
+          <Link to="/shop" className="category-card">
             <h3>Men's Wear</h3>
-          </div>
-          <div className="category-card">
+          </Link>
+          <Link to="/shop" className="category-card">
             <h3>Women's Wear</h3>
-          </div>
-          <div className="category-card">
+          </Link>
+          <Link to="/shop" className="category-card">
             <h3>Kids' Wear</h3>
-          </div>
+          </Link>
         </div>
       </section>
     </div>

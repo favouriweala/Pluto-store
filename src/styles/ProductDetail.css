@@ -172,6 +172,11 @@
   color: var(--primary);
 }
 
+.add-to-cart-btn.added {
+  background: var(--secondary);
+  color: var(--white);
+}
+
 .wishlist-btn {
   background: var(--white);
   color: var(--primary);

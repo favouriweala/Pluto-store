@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useCart } from '../context';
 import '../styles/Checkout.css';
 
 export default function Checkout() {
   const [paymentMethod, setPaymentMethod] = useState('card');
+  const { items, getCartSubtotal, getShippingCost, getCartTotal } = useCart();
 
   return (
     <div className="checkout">
@@ -104,20 +106,29 @@ export default function Checkout() {
           <aside className="checkout-summary">
             <h3>Order Summary</h3>
             <div className="summary-items">
-              {/* Items will be listed here */}
+              {items.length === 0 ? (
+                <p className="empty-items">No items in cart</p>
+              ) : (
+                items.map((item) => (
+                  <div key={`${item.productId}-${item.size}`} className="summary-item">
+                    <div className="summary-item-name">{item.name} x{item.quantity}</div>
+                    <div className="summary-item-price">₦{(item.price * item.quantity).toFixed(2)}</div>
+                  </div>
+                ))
+              )}
             </div>
             <div className="summary-totals">
               <div className="summary-row">
                 <span>Subtotal:</span>
-                <span>₦0</span>
+                <span>₦{getCartSubtotal().toFixed(2)}</span>
               </div>
               <div className="summary-row">
                 <span>Shipping:</span>
-                <span>₦0</span>
+                <span>₦{getShippingCost().toFixed(2)}</span>
               </div>
               <div className="summary-row total">
                 <span>Total:</span>
-                <span>₦0</span>
+                <span>₦{getCartTotal().toFixed(2)}</span>
               </div>
             </div>
           </aside>

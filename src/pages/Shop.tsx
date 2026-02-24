@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useProducts } from '../context';
 import '../styles/Shop.css';
 
@@ -48,14 +49,19 @@ export default function Shop() {
         <main className="shop-main">
           <h2>Our Collection</h2>
           
-        {displayProducts.length === 0 ? (
+          {displayProducts.length === 0 ? (
             <div className="empty-state">
-              <p>Products coming soon...</p>
+              <p>No products in this category yet...</p>
             </div>
           ) : (
             <div className="products-grid">
               {displayProducts.map((product) => (
-                <div key={product.id} className="product-card">
+                <Link 
+                  key={product.id}
+                  to={`/product/${product.id}`}
+                  className="product-card"
+                  style={{ textDecoration: 'none' }}
+                >
                   <div className="product-image">
                     <img src={product.image} alt={product.name} />
                   </div>
@@ -64,7 +70,7 @@ export default function Shop() {
                     <h3 className="product-name">{product.name}</h3>
                     <div className="product-price">₦{product.price.toFixed(2)}</div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           )}

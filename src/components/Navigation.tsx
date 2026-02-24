@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useCart } from '../context';
 import '../styles/Navigation.css';
 
 export default function Navigation() {
+  const { getCartItemCount } = useCart();
+  const cartCount = getCartItemCount();
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -18,7 +22,7 @@ export default function Navigation() {
           </li>
           <li>
             <Link to="/cart" className="navbar-link">
-              🛒 Cart
+              🛒 Cart {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
             </Link>
           </li>
           <li>
