@@ -12,9 +12,7 @@ import './App.css';
 
 function App() {
   return (
-    <div style={{ background: "red", height: "100vh" }}>
-      Test
-      
+    <div className="app">
       <AuthProvider>
         <ProductProvider>
           <CartProvider>

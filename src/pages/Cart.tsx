@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../context';
 import '../styles/Cart.css';
 
-export default function Cart() {
+function Cart() {
   const { items, removeItem, updateQuantity, getCartSubtotal, getShippingCost, getCartTotal } = useCart();
 
   const handleQuantityChange = (productId: string, newQuantity: number) => {
@@ -92,3 +92,4 @@ export default function Cart() {
     </div>
   );
 }
+export default Cart;

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 
-export default function Home() {
+function Home() {
   return (
     <div className="home">
       <section className="hero">
@@ -47,3 +47,4 @@ export default function Home() {
     </div>
   );
 }
+export default Home;

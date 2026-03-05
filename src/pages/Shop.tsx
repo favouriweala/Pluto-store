@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useProducts } from '../context';
 import '../styles/Shop.css';
 
-export default function Shop() {
+function Shop() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const { products, getProductsByCategory, getDiscountPercentage } = useProducts();
 
@@ -87,3 +87,4 @@ export default function Shop() {
     </div>
   );
 }
+export default Shop;

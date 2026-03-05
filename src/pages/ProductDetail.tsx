@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useProducts, useCart } from '../context';
 import '../styles/ProductDetail.css';
 
-export default function ProductDetail() {
+function ProductDetail() {
   const { id: productId } = useParams();
   const navigate = useNavigate();
   const { getProductById, getDiscountPercentage } = useProducts();
@@ -135,3 +135,4 @@ export default function ProductDetail() {
     </div>
   );
 }
+export default ProductDetail;

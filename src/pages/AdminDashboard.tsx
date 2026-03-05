@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../styles/AdminDashboard.css';
 
-export default function AdminDashboard() {
+function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('products');
 
   return (
@@ -136,3 +136,4 @@ export default function AdminDashboard() {
     </div>
   );
 }
+export default AdminDashboard;

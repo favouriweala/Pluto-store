@@ -20,7 +20,7 @@ interface FormErrors {
   [key: string]: string;
 }
 
-export default function Checkout() {
+function Checkout() {
   const [paymentMethod, setPaymentMethod] = useState('card');
   const [orderComplete, setOrderComplete] = useState(false);
   const [formData, setFormData] = useState<FormData>({
@@ -377,3 +377,4 @@ export default function Checkout() {
     </div>
   );
 }
+export default Checkout;

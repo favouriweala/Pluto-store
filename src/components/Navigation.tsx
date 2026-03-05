@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../context';
 import '../styles/Navigation.css';
 
-export default function Navigation() {
+function Navigation() {
   const { getCartItemCount } = useCart();
   const cartCount = getCartItemCount();
 
@@ -33,3 +33,4 @@ export default function Navigation() {
     </nav>
   );
 }
+export default Navigation;
