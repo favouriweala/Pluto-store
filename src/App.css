@@ -14,10 +14,12 @@ body {
   color: var(--text-dark);
 }
 
+
 #root {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 /* Typography */
@@ -106,6 +108,6 @@ button {
   }
 
   body {
-    background: white;
+    background-color: red !important;
   }
 }
